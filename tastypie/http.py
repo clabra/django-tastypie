@@ -6,7 +6,8 @@ from django.http import HttpResponse
 
 
 class HttpCreated(HttpResponse):
-    status_code = 201
+    #status_code = 201
+    status_code = 200
 
     def __init__(self, *args, **kwargs):
         location = kwargs.pop('location', '')
