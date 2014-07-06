@@ -6,14 +6,16 @@ from django.http import HttpResponse
 
 
 class HttpCreated(HttpResponse):
-    #status_code = 201
-    status_code = 200
+    status_code = 201
 
     def __init__(self, *args, **kwargs):
         location = kwargs.pop('location', '')
 
         super(HttpCreated, self).__init__(*args, **kwargs)
         self['Location'] = location
+
+class HttpOK(HttpResponse): 
+    status_code = 200
 
 
 class HttpAccepted(HttpResponse):
